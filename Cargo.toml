@@ -1,6 +1,6 @@
 [package]
 name = "example-automatica"
-version = "0.0.1-develop"
+version = "0.0.2-develop"
 authors = ["kflange <zknsftk1msrk@gmail.com>"]
 edition = "2018"
 publish = false
@@ -14,3 +14,6 @@ thiserror = "1"
 
 [[example]]
 name = "tf2ss"
+
+[[example]]
+name = "pid"
