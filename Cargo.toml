@@ -1,0 +1,13 @@
+[package]
+name = "rust-template"
+version = "0.0.0-develop"
+authors = ["kflange <zknsftk1msrk@gmail.com>"]
+edition = "2018"
+publish = false
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1"
+nom = "6"
+thiserror = "1"
