@@ -1,5 +1,5 @@
 [package]
-name = "rust-template"
+name = "example-automatica"
 version = "0.0.0-develop"
 authors = ["kflange <zknsftk1msrk@gmail.com>"]
 edition = "2018"
@@ -9,5 +9,5 @@ publish = false
 
 [dependencies]
 anyhow = "1"
-nom = "6"
+automatica = "*"
 thiserror = "1"
