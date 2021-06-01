@@ -1,5 +1,17 @@
 use automatica::{poly, Tf};
 
+pub fn kp(kp: f64) -> Tf<f64> {
+    Tf::new(poly!(kp), poly!(1.))
+}
+
+pub fn ki(ki: f64) -> Tf<f64> {
+    Tf::new(poly!(ki), poly!(0., 1.))
+}
+
+pub fn kd(kd: f64) -> Tf<f64> {
+    Tf::new(poly!(0., kd), poly!(1.))
+}
+
 #[derive(Default)]
 pub struct PID {
     kp: Option<f64>,
@@ -56,21 +68,21 @@ impl PID {
 
     fn kp_tf(&self) -> Option<Tf<f64>> {
         match self.kp {
-            Some(kp) => Some(Tf::new(poly!(kp), poly!(1.))),
+            Some(v) => Some(kp(v)),
             None => None,
         }
     }
 
     fn ki_tf(&self) -> Option<Tf<f64>> {
         match self.ki {
-            Some(ki) => Some(Tf::new(poly!(ki), poly!(0., 1.))),
+            Some(v) => Some(ki(v)),
             None => None,
         }
     }
 
     fn kd_tf(&self) -> Option<Tf<f64>> {
         match self.kd {
-            Some(kd) => Some(Tf::new(poly!(0., kd), poly!(1.))),
+            Some(v) => Some(kd(v)),
             None => None,
         }
     }
